@@ -1,0 +1,13 @@
+name: densemapnet
+
+base:
+  system: ubuntu
+  version: 16.04
+  cuda: 8.0
+
+pip3-packages:
+  - tensorflow-gpu
+  - keras
+
+custom:
+  - ":"

@@ -1,4 +1,4 @@
-FROM nvidia/cuda:8.0-cudnn7-devel-ubuntu16.04
+FROM nvidia/cuda:8.0-cudnn6-devel-ubuntu16.04
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV LANG C.UTF-8
@@ -32,9 +32,16 @@ WORKDIR ${HOME}
 
 CMD ["jupyter", "lab", "--no-browser", "--ip=0.0.0.0", "--NotebookApp.token=''"]
 
+RUN apt-get update \
+ && apt-get install -yq --no-install-recommends \
+    python3-tk \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
+
 RUN pip3 install  \
-    tensorflow-gpu \
-    keras
+    tensorflow-gpu==1.4 \
+    keras \
+    matplotlib
 
 COPY . ${HOME}
 RUN chown -R ${NB_UID} ${HOME}

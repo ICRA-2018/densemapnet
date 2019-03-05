@@ -18,5 +18,4 @@ docker run --rm \
     --env="XAUTHORITY=$XAUTH" \
     --volume="$XAUTH:$XAUTH" \
     --runtime=nvidia \
-    --volume="/DATASET:/DATASET:ro" \
-    -p 8888:8888 densemapnet
+    --volume="/media/usuario/DATASET:/DATASET:ro"  -p 8888:8888 densemapnet

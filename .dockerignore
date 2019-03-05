@@ -1,6 +1,6 @@
 README.md
 .dockerignore
-repolab.yaml
-repolab.dockerfile
-repolab_build.sh
-repolab_run.sh
+roslab.yaml
+roslab.dockerfile
+roslab_build.sh
+roslab_run.sh

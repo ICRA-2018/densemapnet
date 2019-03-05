@@ -1,0 +1,23 @@
+name: densemapnet
+
+base:
+  ubuntu: 16.04
+  cuda: 8.0-runtime
+  cudnn: 6-runtime
+
+apt:
+  - python3-tk
+
+pip3:
+  - tensorflow-gpu==1.4
+  - keras
+  - matplotlib
+  - pydot
+
+volume:
+  - host_path: /media/usuario/DATASET
+    container_path: /DATASET
+    options: ro
+
+custom:
+  - ":"
